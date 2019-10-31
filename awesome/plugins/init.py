@@ -1,30 +1,18 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from jieba import posseg
-import random
-
 from .data import get_weather_of_city
 from .data import fff
 
 
 @on_command('who', aliases=('名字', '姓名', '叫什么'), only_to_me=False)
 async def who(session: CommandSession):
-    await session.send('My name is "张新昌"')
+    await session.send('My name is "xxx"', at_sender=True)
 
 
 @on_command('sex', aliases=('性别', "男还是女"), only_to_me=False)
 async def sex(session: CommandSession):
     await session.send('secret')
-
-
-@on_command('daily', aliases=('签到', ''), only_to_me=False)
-async def daily(session: CommandSession):
-    a = random.randint(1, 3)
-    if a == 1:
-        str1 = "恭喜您签到成功"+"\n"+"获得积分:"+" "+str(random.randint(1, 100))
-        await session.send(str1)
-    else:
-        await session.send('签到失败,请重新签到')
 
 
 @on_command('weather', aliases=('天气', '天气预报', '查天气'), only_to_me=False)
