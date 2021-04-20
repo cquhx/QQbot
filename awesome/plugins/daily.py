@@ -30,7 +30,7 @@ async def searchscore(session: CommandSession):
 async def daily(session: CommandSession):
     user_id = str(session.ctx['sender']['user_id'])
     a = random.randint(1, 50)
-    con = pymysql.connect(host='localhost', user='root', password='sql171015', database='qqbot', charset='utf8')
+    con = pymysql.connect(host='xxx', user='xxx', password='xxx', database='xxx', charset='utf8')
     cur = con.cursor()
     s = 'select da from u where id = %s' % user_id
     cur.execute(s)
