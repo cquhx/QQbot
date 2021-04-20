@@ -10,7 +10,7 @@ import datetime
 @on_command('searchscore', aliases=('积分查询', '查询积分'), only_to_me=False)
 async def searchscore(session: CommandSession):
     user_id = str(session.ctx['sender']['user_id'])
-    con = pymysql.connect(host='localhost', user='root', password='sql171015', database='qqbot', charset='utf8')
+    con = pymysql.connect(host='xxx', user='xxx', password='xxx', database='xxx', charset='utf8')
     cur = con.cursor()
     cur.execute('select score from u where id = %s', user_id)
     res = str(cur.fetchone())
